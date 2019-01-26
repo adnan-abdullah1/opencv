@@ -149,4 +149,41 @@ def dip():
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-    
+def pyramid():   
+        img=cv2.imread('a.jpg')
+        #Rreducing image dimensions by 50%
+                #Rreducing image dimensions by 50%
+        smaller=cv2.pyrDown(img)
+        #doubling size of image by 200%
+        larger=cv2.pyrUp(img)
+        cv2.imshow("Dimension*2",larger)
+
+
+        cv2.imshow("Dimension/2",smaller)
+        cv2.imshow("Orginal",img)
+
+        print(" Orginal Dimensions",img.shape)
+        print(" smaller image Dimension/n",smaller.shape)
+        print(" larger Dimension*n",larger.shape)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
+def crop():
+        #image cropping
+       
+        img=cv2.imread('a.jpg')
+        # extract height and width
+        h,w=img.shape[:2]
+
+        #extract cordinates(top_left of cropping rectangle)
+        start_row,start_col=int(h*.25),int(w*.25)
+        # geting end pixel cordinates(bottom right)
+        end_row,end_col=int(h*.75),int(w*.75)
+        #using indexing to crop image
+        cropped=img[start_row:end_row,start_col:end_col]
+
+        cv2.imshow('orginal',img)
+        cv2.waitKey(0)
+        cv2.imshow('cropped',cropped)
+        cv2.waitKey()
+        cv2.destroyAllWindows()
