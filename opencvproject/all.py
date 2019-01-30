@@ -1,8 +1,8 @@
 import numpy as np 
 import cv2
 import split 
-i=1
-while i==1:
+i='1'
+while i=='1':
     print(" \033[1;34;40m ENTER 1 TO READ IMAGE\nENTER 2 TO GET IMAGE INFO \n ENTER 3 TO GET BINARY OF IMAGE \n ENTER 4 TO EXTRACT RGB\nENTER 5 TO DISPACE IMAGE\nENTER 6 TO GET GRAY SCALE\n ENTER 7 TO GET HSV OF IMAGE\nENTER 8 TO ROTATE IMAGE")
     print("\033[1;34;40m Enter 9 to get transpose of image\nEnter 10 to Resize \n Enter 11 to resixe image using pyramid\n Enter 12 to Crop image")
     print("\033[1;34;40m Enter 13 for bitwise opreations\nEnter 14 for blur\nEnter 15 for smmothning")
@@ -14,7 +14,7 @@ while i==1:
     if f==1:
         split.read()
     if f==2:
-        getinfo()
+        split.getinfo()
     if f==3:
         split.binimg()
     if f==4:
@@ -41,4 +41,4 @@ while i==1:
         split.blur()
     if f==15:
         split.smooth()
-    i=int(input(" enter 1 if contuniue "))
+    i=input(" enter 1 if contuniue ")

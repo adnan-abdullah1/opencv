@@ -2,19 +2,19 @@ import cv2
 import numpy as np
 
 def transpose():
-     
+    img=cv2.imread('a.jpg')
     ri=cv2.transpose(img)
     cv2.imshow('Rotated image',ri)
     cv2.imshow('Orginal image',img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 def read():
-         
+        img=cv2.imread('a.jpg')
         cv2.imshow('output image',img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 def resize():
-         
+        img=cv2.imread('a.jpg')
         cv2.imshow('orginal Image',img)
         cv2.waitKey(0)
 
@@ -45,7 +45,7 @@ def binimg():
 def hsv():
         # HUE: 0 - 180, SATURATION:0 - 255,VALUE; 0 - 255
 
-         
+        img=cv2.imread('a.jpg')
         img_hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
         cv2.imshow('Hue channel',img_hsv[:,:,0])
         cv2.imshow(' SAturation',img_hsv[:,:,1])
@@ -56,7 +56,7 @@ def hsv():
 def hsv():
         # HUE: 0 - 180, SATURATION:0 - 255,VALUE; 0 - 255
 
-         
+        img=cv2.imread('a.jpg')
         img_hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
         cv2.imshow('Hue channel',img_hsv[:,:,0])
         cv2.imshow(' SAturation',img_hsv[:,:,1])
@@ -66,7 +66,7 @@ def hsv():
 
 
 def gray():
-         
+        img=cv2.imread('a.jpg')
         cv2.imshow("original",img)
         cv2.waitKey(0)
 # now converting to greyscaleimage method1
@@ -82,7 +82,7 @@ def gray():
 def rotate():
         angle=int(input("enter angle "))
         scale=float(input("enter scale "))
-         
+        img=cv2.imread('a.jpg')
         h,w=img.shape[:2]
         rm=cv2.getRotationMatrix2D((w/2,h/2),angle,scale)  # 180 is ange at which img is rotated 1 is scale
         ri=cv2.warpAffine(img,rm,(w,h))
@@ -106,7 +106,7 @@ def getinfo():
 
 def rgb():
         import numpy as np 
-         
+        img=cv2.imread('a.jpg')
         cv2.imshow("orginal",img)
         cv2.waitKey(0)
 # now extract R G B 
@@ -122,7 +122,7 @@ def rgb():
         cv2.destroyAllWindows()
 
 def dip():
-         
+        img=cv2.imread('a.jpg')
 # store height and width of image
         height,width=img.shape[:2]
         print("\033[1;35;40m",height)
@@ -150,9 +150,8 @@ def dip():
         cv2.destroyAllWindows()
 
 def pyramid():   
-         
+        img=cv2.imread('a.jpg')
         #Rreducing image dimensions by 50%
-                #Rreducing image dimensions by 50%
         smaller=cv2.pyrDown(img)
         #doubling size of image by 200%
         larger=cv2.pyrUp(img)
@@ -171,7 +170,7 @@ def pyramid():
 def crop():
         #image cropping
        
-         
+        img=cv2.imread('a.jpg')
         # extract height and width
         h,w=img.shape[:2]
 
@@ -239,7 +238,7 @@ def smooth():
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 def blur():
-         
+        img=cv2.imread('a.jpg')
         cv2.imshow('orginal',img)
         cv2.waitKey(0)
 
@@ -261,4 +260,6 @@ def blur():
         cv2.waitKey(0)
         cv2.destroyAllWindows()
         
+
+
 
