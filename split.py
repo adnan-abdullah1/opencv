@@ -2,19 +2,19 @@ import cv2
 import numpy as np
 
 def transpose():
-     
+    img=cv2.imread('a.jpg')
     ri=cv2.transpose(img)
     cv2.imshow('Rotated image',ri)
     cv2.imshow('Orginal image',img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 def read():
-         
+        img=cv2.imread('a.jpg')
         cv2.imshow('output image',img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 def resize():
-         
+        img=cv2.imread('a.jpg')
         cv2.imshow('orginal Image',img)
         cv2.waitKey(0)
 
@@ -45,7 +45,7 @@ def binimg():
 def hsv():
         # HUE: 0 - 180, SATURATION:0 - 255,VALUE; 0 - 255
 
-         
+        img=cv2.imread('a.jpg')
         img_hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
         cv2.imshow('Hue channel',img_hsv[:,:,0])
         cv2.imshow(' SAturation',img_hsv[:,:,1])
@@ -56,7 +56,7 @@ def hsv():
 def hsv():
         # HUE: 0 - 180, SATURATION:0 - 255,VALUE; 0 - 255
 
-         
+        img=cv2.imread('a.jpg')
         img_hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
         cv2.imshow('Hue channel',img_hsv[:,:,0])
         cv2.imshow(' SAturation',img_hsv[:,:,1])
@@ -66,7 +66,7 @@ def hsv():
 
 
 def gray():
-         
+        img=cv2.imread('a.jpg')
         cv2.imshow("original",img)
         cv2.waitKey(0)
 # now converting to greyscaleimage method1
@@ -82,7 +82,7 @@ def gray():
 def rotate():
         angle=int(input("enter angle "))
         scale=float(input("enter scale "))
-         
+        img=cv2.imread('a.jpg')
         h,w=img.shape[:2]
         rm=cv2.getRotationMatrix2D((w/2,h/2),angle,scale)  # 180 is ange at which img is rotated 1 is scale
         ri=cv2.warpAffine(img,rm,(w,h))
@@ -106,7 +106,7 @@ def getinfo():
 
 def rgb():
         import numpy as np 
-         
+        img=cv2.imread('a.jpg')
         cv2.imshow("orginal",img)
         cv2.waitKey(0)
 # now extract R G B 
@@ -122,7 +122,7 @@ def rgb():
         cv2.destroyAllWindows()
 
 def dip():
-         
+        img=cv2.imread('a.jpg')
 # store height and width of image
         height,width=img.shape[:2]
         print("\033[1;35;40m",height)
@@ -150,9 +150,7 @@ def dip():
         cv2.destroyAllWindows()
 
 def pyramid():   
-         
         #Rreducing image dimensions by 50%
-                #Rreducing image dimensions by 50%
         smaller=cv2.pyrDown(img)
         #doubling size of image by 200%
         larger=cv2.pyrUp(img)
@@ -171,7 +169,7 @@ def pyramid():
 def crop():
         #image cropping
        
-         
+        img=cv2.imread('a.jpg')
         # extract height and width
         h,w=img.shape[:2]
 
@@ -187,78 +185,3 @@ def crop():
         cv2.imshow('cropped',cropped)
         cv2.waitKey()
         cv2.destroyAllWindows()
-
-def bitwise():
-        square=np.zeros((300,300),np.uint8) #creating black image
-        cv2.rectangle(square,(50,50),(250,250),255,-1) #200 is color -1 fill whole area 1 will give only square white line
-        cv2.imshow('Square',square)
-        cv2.waitKey(0)
-        #making sllipse now
-        ellipse=np.zeros((300,300),np.uint8)
-        cv2.ellipse(ellipse,(150,150),(150,150),30,0,180,255,-1)
-
-        cv2.imshow('Ellipse',ellipse)
-        cv2.waitKey(0)
-        #doing bitwise and
-        And=cv2.bitwise_and(square,ellipse)
-        cv2.imshow("Bitwise_And",And)
-        cv2.waitKey(0)
-        #bitwise or
-        Or=cv2.bitwise_or(square,ellipse)
-        cv2.imshow("Bitwise_or", Or)
-        cv2.waitKey(0)
-        #bitwise xor
-        xor=cv2.bitwise_xor(square,ellipse)
-        cv2.imshow("Bitwise_Xor",xor)
-        cv2.waitKey(0)
-        #bitwise not can be done with single image
-        Not11=cv2.bitwise_not(square)
-        Not22=cv2.bitwise_not(ellipse)
-        cv2.imshow("Bitwise_not",Not11)
-        cv2.waitKey(0)
-        cv2.imshow("Bitwise_not",Not22)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-def smooth():
-        img=cv2.imread('a.jpg')
-        cv2.imshow('orginal',img)
-        cv2.waitKey(0)
-        #averaging done by convoling the image with a normalize box fliter
-        #this takes the pixela under and replace the central element
-        #Box size needs to odd and postive
-        blur=cv2.blur(img,(3,3))
-        cv2.imshow('Blur Image',blur)
-        cv2.waitKey(0)
-        #Gaussian
-        Gaussian=cv2.GaussianBlur(img,(7,7),0)
-        cv2.imshow('Gaussian Blur ',Gaussian)
-        cv2.waitKey(0)
-        #median blur
-        median=cv2.medianBlur(img,5)
-        cv2.imshow('Median Blur image',median)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-def blur():
-         
-        cv2.imshow('orginal',img)
-        cv2.waitKey(0)
-
-        #kernel3*3
-        kernel_3=np.ones((3,3),np.float32)/9
-        #we use 2D.filter2D convolve the kernel with an image
-        blurred=cv2.filter2D(img,-1,kernel_3)
-        cv2.imshow('3*3 kernel blur',blurred)
-        cv2.waitKey(0)
-
-        kernel_7=np.ones((7,7),np.float32)/49
-        #we use 2D.filter2D convolve the kernel with an image
-        blurred2=cv2.filter2D(img,-1,kernel_7)
-        cv2.imshow('3*3 kernel blur',blurred2)
-        cv2.waitKey(0)
-        #bilateral filter effective among all useful in noise removal(but heavy)
-        bilateral=cv2.bilateralFilter(img,9,75,75)#9 is sigma color and 75 is sigma space and can be changed
-        cv2.imshow('Bilateral Blur Image',bilateral)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-        
-
