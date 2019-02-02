@@ -2,17 +2,19 @@ import cv2
 import numpy as np
 
 def transpose():
-    img=cv2.imread('a.jpg')
-    ri=cv2.transpose(img)
-    cv2.imshow('Rotated image',ri)
-    cv2.imshow('Orginal image',img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+        img=cv2.imread('a.jpg')
+        ri=cv2.transpose(img)
+        cv2.imshow('Rotated image',ri)
+        cv2.imshow('Orginal image',img)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 def read():
         img=cv2.imread('a.jpg')
         cv2.imshow('output image',img)
         cv2.waitKey(0)
+        
         cv2.destroyAllWindows()
+        
 def resize():
         img=cv2.imread('a.jpg')
         cv2.imshow('orginal Image',img)
