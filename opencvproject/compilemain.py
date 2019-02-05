@@ -52,7 +52,7 @@ def Ar():
    from PIL import Image
    import pytesseract
    import cv2
-   img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a1.jpg")
+   img=cv2.imread("a1.jpg")
    cv2.imshow('output image',img)
    cv2.waitKey(0)
         
@@ -60,15 +60,12 @@ def Ar():
        
    
         #location=input("enter location and image name ")
-   im=Image.open("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a1.jpg")
+   im=Image.open("a1.jpg")
    text=pytesseract.image_to_string(im,lang='eng')
    print(text)
   
    messagebox.showinfo('text from image',text)
-   cv2.waitKey(0)
-        
-   cv2.destroyAllWindows()
-        
+   
 
 def exit1():
     exit()
@@ -124,7 +121,7 @@ btn13=Button(root1,text="Exit",fg="black",bg="red",command=exit1,width=25,height
 btn13.grid(row=6,column=4,pady=10,padx=40)
 
 
-btn19=Button(root1,text="Ocr",fg="red",command=Ar,width=25,height=2)
+btn19=Button(root1,text="Optical Character Recogination",fg="red",command=Ar,width=25,height=2)
 btn19.grid(row=1,column=2,pady=10,padx=40)
 
 
