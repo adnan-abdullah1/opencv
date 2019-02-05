@@ -2,21 +2,21 @@ import cv2
 import numpy as np
 
 def transpose():
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         ri=cv2.transpose(img)
         cv2.imshow('Rotated image',ri)
         cv2.imshow('Orginal image',img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 def read():
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         cv2.imshow('output image',img)
         cv2.waitKey(0)
         
         cv2.destroyAllWindows()
         
 def resize():
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         cv2.imshow('orginal Image',img)
         cv2.waitKey(0)
 
@@ -35,7 +35,7 @@ def resize():
         cv2.destroyAllWindows()
 
 def binimg():
-        img=cv2.imread('a.jpg',0) #convert to greyscale
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg",0) #convert to greyscale
         cv2.imshow('gray',img)
         cv2.waitKey(0)
         ret,bw=cv2.threshold(img,127,255,cv2.THRESH_BINARY)
@@ -47,7 +47,7 @@ def binimg():
 def hsv():
         # HUE: 0 - 180, SATURATION:0 - 255,VALUE; 0 - 255
 
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         img_hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
         cv2.imshow('Hue channel',img_hsv[:,:,0])
         cv2.imshow(' SAturation',img_hsv[:,:,1])
@@ -58,7 +58,7 @@ def hsv():
 def hsv():
         # HUE: 0 - 180, SATURATION:0 - 255,VALUE; 0 - 255
 
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         img_hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
         cv2.imshow('Hue channel',img_hsv[:,:,0])
         cv2.imshow(' SAturation',img_hsv[:,:,1])
@@ -68,14 +68,14 @@ def hsv():
 
 
 def gray():
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         cv2.imshow("original",img)
         cv2.waitKey(0)
 # now converting to greyscaleimage method1
         """gray_img=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         cv2.imshow('grayimage',gray_img) """
 # now converting to greyscaleimage method2
-        l=cv2.imread('a.jpg',0)
+        l=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg",0)
         cv2.imshow('graycolor',l)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
@@ -84,7 +84,7 @@ def gray():
 def rotate():
         angle=int(input("enter angle "))
         scale=float(input("enter scale "))
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         h,w=img.shape[:2]
         rm=cv2.getRotationMatrix2D((w/2,h/2),angle,scale)  # 180 is ange at which img is rotated 1 is scale
         ri=cv2.warpAffine(img,rm,(w,h))
@@ -95,7 +95,7 @@ def rotate():
         cv2.destroyAllWindows()
 
 def getinfo():
-        img=cv2.imread("a.jpg")
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
 
         cv2.imshow('info',img)
         cv2.waitKey(0)
@@ -108,7 +108,7 @@ def getinfo():
 
 def rgb():
         import numpy as np 
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         cv2.imshow("orginal",img)
         cv2.waitKey(0)
 # now extract R G B 
@@ -124,7 +124,7 @@ def rgb():
         cv2.destroyAllWindows()
 
 def dip():
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
 # store height and width of image
         height,width=img.shape[:2]
         print("\033[1;35;40m",height)
@@ -152,7 +152,7 @@ def dip():
         cv2.destroyAllWindows()
 
 def pyramid():   
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         #Rreducing image dimensions by 50%
         smaller=cv2.pyrDown(img)
         #doubling size of image by 200%
@@ -172,7 +172,7 @@ def pyramid():
 def crop():
         #image cropping
        
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         # extract height and width
         h,w=img.shape[:2]
 
@@ -221,7 +221,7 @@ def bitwise():
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 def smooth():
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         cv2.imshow('orginal',img)
         cv2.waitKey(0)
         #averaging done by convoling the image with a normalize box fliter
@@ -240,7 +240,7 @@ def smooth():
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 def blur():
-        img=cv2.imread('a.jpg')
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg")
         cv2.imshow('orginal',img)
         cv2.waitKey(0)
 
@@ -264,4 +264,74 @@ def blur():
         
 
 
+#!----------------------------------------------------------------------------------------------------------------------------!
+                                       #   Logrithm image
+#!-----------------------------------------------------------------------------------------------------------------------------!
+def log1():
+        img_1=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg",0)
+        img_2=np.uint8(np.log1(img_1))
+        thresh=1
+        img_3=cv2.threshold(img_2,thresh,255,cv2.THRESH_BINARY)[1]
+        cv2.imshow("Input image",img_1)
+        cv2.imshow("Log transformed",img_3)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
+
+#!--------------------------------------------------------------------------------------------------------------------------!
+                                        #       Negative of image
+#!---------------------------------------------------------------------------------------------------------------------------!
+def negative():
+    import cv2
+    img_1=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg",0)
+    img_2=255-img_1
+    cv2.imshow("Negative image",img_2)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+#!--------------------------------------------------------------------------------------------------------------------------!
+                                        #       Negative of image
+#!-------------------------------------------------------------------------------------------------------------------------------
+def edge():
+
+        img=cv2.imread("/root/Desktop/nielit/gitopencv/opencv/opencvproject/img/a.jpg",0)
+        h,w=img.shape
+
+        #extract slope edges
+        sobel_x=cv2.Sobel(img,cv2.CV_64F,1,0,ksize=5)
+        sobel_y=cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5)
+        cv2.imshow("Orginal_Image",img)
+        cv2.waitKey(0)
+        cv2.imshow("Sobel_X",sobel_x)
+        cv2.imshow("Sobel_y",sobel_y)
+
+        sobel_or=cv2.bitwise_or(sobel_x,sobel_y)
+        cv2.imshow("Sobel or image",sobel_or)
+        cv2.waitKey(0) 
+
+        #laplacian 
+        laplacian=cv2.Laplacian(img,cv2.CV_64F)
+        cv2.imshow("Laplacian image",laplacian)
+
+        #cani edge detction
+        canny=cv2.Canny(img,20,170) # 20 170 are threshold
+        cv2.imshow("Canny Edge",canny)
+        cv2.waitKey(0)
+
+
+#  
+#!--------------------------------------------------------------------------------------------------------------------------!
+ #                                        optical character recogination      
+#!-------------------------------------------------------------------------------------------------------------------------------
+"""
+def ocr():
+
+        from PIL import Image
+        import pytesseract
+        #location=input("enter location and image name ")
+        im=Image.open('a1.jpg')
+        text=pytesseract.image_to_string(im,lang='eng')
+        return text
+       # print(text)
+        
+"""

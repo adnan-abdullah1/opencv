@@ -38,4 +38,15 @@ def blu():
     split.blur()
 def smo():
     split.smooth()
+def neg():
+    split.negative()
+
+def logg():
+    split.log1()
+
    
+def ede():
+    split.edge()
+def ocrr():
+    split.ocr()
+    
