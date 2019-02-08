@@ -62,10 +62,57 @@ def Ar():
         #location=input("enter location and image name ")
    im=Image.open("a1.jpg")
    text=pytesseract.image_to_string(im,lang='eng')
-   print(text)
+  
   
    messagebox.showinfo('text from image',text)
    
+def As():
+   
+      messagebox.showinfo('text from image',"Press Ok to say something for Recognition")
+      #os.system('python3 A17.py')
+      import speech_recognition as sr
+      from gtts import gTTS
+        #gTTS (Google Text-to-Speech), a Python library and CLI tool to interface with Google Translate's text-to-speech API. 
+        #Writes spoken mp3 data to a file, a file-like object (bytestring) for further audio manipulation, or stdout. 
+        #quiet the endless 'insecurerequest' warning
+
+      from pygame import mixer   #imported to playout music
+      mixer.init() #initialize all imported pygame modules
+      cond=1
+      while (True==True):
+        # obtain audio from the microphone
+                r = sr.Recognizer()
+                with sr.Microphone() as source:
+                        #print("Please wait. Calibrating microphone...")
+                        # listen for 1 second and create the ambient noise energy level
+                        r.adjust_for_ambient_noise(source, duration=0)
+                        print("Say something!")
+                        audio = r.listen(source,phrase_time_limit=5)
+                        
+                # recognize speech using Sphinx/Google
+                try:
+                        #response = r.recognize_sphinx(audio)
+                        response = r.recognize_google(audio)
+                        messagebox.showinfo('Process',"Google thinks you said! "+response+"if i am correct then press ok to listen")
+                        print("I think you said '" + response + "'")
+                        tts = gTTS(text="I think you said "+str(response), lang='en')
+                        tts.save("response.mp3")
+                        mixer.music.load('response.mp3')
+                        mixer.music.play()
+                        
+                        
+                
+                except sr.UnknownValueError:
+                        print("Sphinx could not understand audio")
+                except sr.RequestError as e:
+                        print("Sphinx error; {0}".format(e))
+                
+                break
+                
+
+                
+    
+ 
 
 def exit1():
     exit()
@@ -127,6 +174,10 @@ btn19.grid(row=1,column=2,pady=10,padx=40)
 
 btn18=Button(root1,text="Edge_Detect",fg="red",command= Aq  ,width=25,height=2)
 btn18.grid(row=0,column=2,pady=10,padx=40)
+
+
+btn18=Button(root1,text="GSR",fg="red",command= As  ,width=25,height=2)
+btn18.grid(row=2,column=2,pady=10,padx=40)
 
 
 root1.pack(side=BOTTOM)

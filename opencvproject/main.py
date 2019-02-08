@@ -49,4 +49,6 @@ def ede():
     split.edge()
 def ocrr():
     split.ocr()
+def google():
+    split.gsr()
     
