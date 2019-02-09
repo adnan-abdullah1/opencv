@@ -112,7 +112,9 @@ def As():
 
                 
     
- 
+def infodev():
+        messagebox.showinfo('Devlopers',"Adnan Abdullah \n Hanaan Naseer\n Aadil Hassan Khan\nwe all are students of NC-KU")
+
 
 def exit1():
     exit()
@@ -166,6 +168,9 @@ btn17.grid(row=1,column=1,pady=10,padx=100)
 
 btn13=Button(root1,text="Exit",fg="black",bg="red",command=exit1,width=25,height=2)
 btn13.grid(row=6,column=4,pady=10,padx=40)
+
+btn19=Button(root1,text="Devloper-info",fg="black",bg="green",command=infodev,width=25,height=2)
+btn19.grid(row=6,column=0,pady=10,padx=40)
 
 
 btn19=Button(root1,text="Optical Character Recogination",fg="red",command=Ar,width=25,height=2)
